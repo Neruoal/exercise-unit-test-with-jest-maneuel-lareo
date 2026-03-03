@@ -3,15 +3,20 @@
 
 test("One euro should be 1.07 dollars", function() {
     const { fromEuroToDollar } = require('./app.js');
-    expect(fromEuroToDollar(3.5)).toBe(3.745); 
+    const dollars = fromEuroToDollar(3.5);
+    const expected = 3.5 * 1.07;
+    expect(fromEuroToDollar(3.5)).toBe(3.745);
 })
 
-test("Conversion from USD to JPY (1 USD = 149.03 JPY)", function() {
-    const { fromDollarToYen } = require('./app.js')
-    expect(fromDollarToYen(10)).toBe(1490.3);
+test("Un dollar debe ser 149.03 Yenes)", function() {
+   const { fromDollarToYen } = require('./app.js')
+   const yen = fromEuroToYen(3.5);
+   const expected = 3.5 * 1.07;
+   expect(fromEuroToYen(3.5)).toBe(3.745);
+
 })
 
-test("Conversion from JPY to GBP (1 JPY = 0.0072 GBP)", function() {
-    const { fromYenToPound } = require('./app.js')
+
+    
     expect(fromYenToPound(1000)).toBe(7.2);
 })
